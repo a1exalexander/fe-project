@@ -1,0 +1,28 @@
+{
+    "name": "fe-project",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+      "dev": "run-p scss:watch html:validate:watch serve",
+      "build": "run-s scss:build html:validate",
+      "scss:watch": "sass --watch scss:css",
+      "scss:build": "sass scss:css --style=compressed --no-source-map",
+      "serve": "live-server",
+      "html:validate": "w3c-html-validator --continue",
+      "html:validate:watch": "onchange -i './*.html' -- npm run html:validate"
+    },
+    "pre-commit": [
+      "build"
+    ],
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "live-server": "^1.2.2",
+      "npm-run-all": "^4.1.5",
+      "onchange": "^7.1.0",
+      "pre-commit": "^1.2.2",
+      "sass": "^1.77.6",
+      "w3c-html-validator": "^1.8.1"
+    }
+  }
