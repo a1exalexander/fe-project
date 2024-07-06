@@ -1,0 +1,29 @@
+@use "sass:math";
+@use "sass:string";
+
+@function rem($sizeInPx) {
+    $remSize: math.div($sizeInPx, 16px);
+    @return #{$remSize}rem;
+}
+
+@mixin text(
+  $font-size: 16px,
+  $font-weight: 400,
+  $color: black,
+  $line-height: initial,
+) {
+  font-weight: $font-weight;
+  color: $color;
+
+  @if (string.index(#{$font-size}, "px")) {
+    font-size: rem($font-size);
+  } @else {
+    font-size: $font-size;
+  }
+
+  @if (string.index(#{$line-height}, "px")) {
+    line-height: rem($line-height);
+  } @else {
+    line-height: $line-height;
+  }
+}
