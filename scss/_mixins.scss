@@ -1,5 +1,6 @@
 @use "sass:math";
 @use "sass:string";
+@use "sass:map";
 
 @function rem($sizeInPx) {
     $remSize: math.div($sizeInPx, 16px);
@@ -25,5 +26,24 @@
     line-height: rem($line-height);
   } @else {
     line-height: $line-height;
+  }
+}
+
+$breakpoints: (
+  "mobile": 768px,
+  "desktop": 1024px,
+  "hd": 1240px,
+  "fullhd": 1440px,
+);
+
+@mixin media($screen) {
+  @if (string.index(#{$screen}, "px")) {
+    @media screen and (min-width: #{$screen}) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: map.get($breakpoints, $screen)) {
+      @content;
+    }
   }
 }
