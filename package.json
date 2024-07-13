@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "dev": "run-p scss:watch html:validate:watch html:watch copy:watch serve",
-    "build": "run-s scss:build html:build:prod html:validate copy",
+    "build": "run-s scss:build html:build:prod copy html:validate",
+    "deploy": "gh-pages -d dist",
     "scss:watch": "sass --watch src/scss:dist",
     "scss:build": "sass src/scss:dist --style=compressed --no-source-map",
     "serve": "browser-sync start --config browser-sync.js",
@@ -18,7 +19,6 @@
     "clean": "rimraf dist",
     "prebuild": "npm run clean",
     "predev": "npm run clean",
-    "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
   },
   "pre-commit": [
