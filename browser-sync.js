@@ -25,7 +25,8 @@ module.exports = {
     ],
     "watch": true,
     "ignore": ['node_modules', '.cache', 'scss', 'package.json', 'package-lock.json', '*/**.map'],
-    "server": true,
+    "server": "dist",
+    "files": "dist",
     "port": 3000,
     "codeSync": true,
     "notify": true
