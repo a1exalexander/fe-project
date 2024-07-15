@@ -7,7 +7,7 @@
     "build": "run-s scss:build html:validate",
     "scss:watch": "sass --watch scss:css",
     "scss:build": "sass scss:css --style=compressed --no-source-map",
-    "serve": "browser-sync start --config browser-sync.js",
+    "serve": "live-server",
     "html:validate": "w3c-html-validator --ignore=\"Trailing slash on void elements\" --continue",
     "html:validate:watch": "onchange -i '**/*.html' -- npm run html:validate"
   },
@@ -18,7 +18,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^3.0.2",
+    "live-server": "^1.2.2",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
     "pre-commit": "^1.2.2",

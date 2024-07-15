@@ -7,15 +7,8 @@ Context and progress go here
 
 1. Clone this repository
 2. Install NPM packages
-    
-    For mac, linux and Wwindows:
     ```shell
-    npm install
-    ```
-
-    For Windows (if any errors):
-    ```shell
-    npm install --msvs_version=2013
+        npm install
     ```
 3. Run development server
     ```shell
